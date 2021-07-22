@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="desigen.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest">
+<script>
+    
+    function appendop(opera){
+        document.getElementById("resultA").innerHTML += opera;
+
+    }
+
+    function calcresult() {
+        let container = document.getElementById("resultA");
+        let result = eval(container.innerHTML)
+        container.innerHTML = result;
+
+    }
+
+    function AC() {
+        let container = document.getElementById("resultA");
+        container.innerHTML =  container.innerHTML.slice(0, -1000000000000000)
+    }
+
+</script>
+
+</head>
+
+<body>
+    <div id="resultA"></div>
+
+
+
+
+<table id="ZahlenAC">
+    <tr>
+        <td onclick="AC()" class="AC">AC</td>
+        <td class="AC">+-</td>
+        <td class="AC">%</td>
+        <td onclick="appendop(' / ')" class="mal">/</td>
+    </tr>
+    <tr>
+        <td onclick="appendop(7)">7</td>
+        <td onclick="appendop(8)">8</td>
+        <td onclick="appendop(9)">9</td>
+        <td onclick="appendop(' * ')" class="mal">x</td>
+    </tr>
+
+    <Tr>
+        <td onclick="appendop(4)">4</td>
+        <td onclick="appendop(5)">5</td>
+        <td onclick="appendop(6)">6</td>
+        <td onclick="appendop(' - ')" class="mal">-</td>
+    </Tr>
+
+    <tr>
+        <td onclick="appendop(1)">1</td>
+        <td onclick="appendop(2)">2</td>
+        <td onclick="appendop(3)">3</td>
+        <td onclick="appendop(' + ')" class="mal">+</td>
+    </tr>
+
+    <tr>
+        <td onclick="appendop(0)">0</td>
+        <td></td>
+        <td onclick="appendop('.')">,</td>
+        <td onclick="calcresult()" class="mal">=</td>
+    </tr>
+
+</table>
+
+
+</body>
+
+</html>
